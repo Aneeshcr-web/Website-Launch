@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>StreetCast Digital Out-of-Home Media Solutions</title>
+<meta name="description" content="High-impact LED billboards, digital signage, transit media and event screens—planned around where your audience moves."/>
+<meta name="codex-preview" content="development"/>
+
+
+
+
+
+
+
+
+<style data-vinext-fonts>/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/manrope-76eca2803f7f/manrope-37facb2a.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/manrope-76eca2803f7f/manrope-c9a5f13c.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/manrope-76eca2803f7f/manrope-f00fa027.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/manrope-76eca2803f7f/manrope-bd6e7fdc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/manrope-76eca2803f7f/manrope-76dcfc73.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/manrope-76eca2803f7f/manrope-81401990.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.__font_manrope_01yf5d6 { font-family: 'Manrope', sans-serif; }
+
+.__variable_manrope_01yf5d6 { --font-display: 'Manrope', sans-serif; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/dm-sans-90624ee039aa/dm-sans-f6298972.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url(/assets/_vinext_fonts/dm-sans-90624ee039aa/dm-sans-151a53ae.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.__font_dm_sans_16jf2w7 { font-family: 'DM Sans', sans-serif; }
+
+.__variable_dm_sans_16jf2w7 { --font-body: 'DM Sans', sans-serif; }
+</style>
+<style>/*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */
+@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--spacing:.25rem;--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab, currentcolor 50%, transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.visible{visibility:visible}.relative{position:relative}.start{inset-inline-start:var(--spacing)}.end{inset-inline-end:var(--spacing)}.table{display:table}}:root{--ink:#080b16;--paper:#f4f1eb;--pink:#f248cf;--cyan:#49dceb}*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);font-family:var(--font-body),sans-serif;margin:0}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.wrap{width:min(1180px,100% - 48px);margin:auto}.nav-shell{z-index:30;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);background:#080b16cc;border-bottom:1px solid #ffffff1f;width:100%;position:fixed;top:0}.nav{justify-content:space-between;align-items:center;height:80px;display:flex}.brand img,footer img{width:176px}.nav-links{color:#d7d8df;align-items:center;gap:32px;font-size:13px;display:flex}.nav-cta{color:#080b16;background:#fff;padding:13px 20px;font-weight:700}.menu-button{background:0 0;border:0;display:none}.hero{color:#fff;background:#070a16;height:max(760px,100vh);min-height:700px;position:relative;overflow:hidden}.hero-photo,.hero-shade,.hero-grid{width:100%;height:100%;position:absolute;inset:0}.hero-photo{object-fit:cover}.hero-shade{background:linear-gradient(90deg,#060814f5,#060814c7 36%,#0608142e 73%,#06081459)}.hero-grid{opacity:.11;background-image:linear-gradient(#fff 1px,#0000 1px),linear-gradient(90deg,#fff 1px,#0000 1px);background-size:80px 80px;-webkit-mask-image:linear-gradient(90deg,#000,#0000 67%);mask-image:linear-gradient(90deg,#000,#0000 67%)}.hero-content{z-index:2;padding-top:190px;position:relative}.eyebrow{letter-spacing:.22em;color:#dbe1ef;align-items:center;gap:10px;font-size:11px;font-weight:700;display:flex}.eyebrow span{background:linear-gradient(90deg,var(--pink),var(--cyan));width:25px;height:2px}.eyebrow.dark{color:#555966}.hero h1,.section h2{font-family:var(--font-display),sans-serif;letter-spacing:-.05em;font-weight:800}.hero h1{margin:27px 0 24px;font-size:clamp(58px,7.4vw,108px);line-height:.93}.hero h1 em,.section h2 em{color:#0000;background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;background-clip:text;font-style:normal}.hero-copy{color:#c2c5d0;max-width:610px;font-size:18px;line-height:1.65}.hero-actions{align-items:center;gap:30px;margin-top:37px;display:flex}.button{font-size:14px;font-weight:700}.button.primary{background:linear-gradient(90deg,var(--pink),#7854f6);padding:17px 24px;box-shadow:0 15px 40px #ef46c738}.button span{margin-left:16px}.button.text{border-bottom:1px solid #fff5;padding:15px 0}.hero-proof{gap:42px;margin-top:84px;display:flex}.hero-proof div{border-left:1px solid #ffffff2b;gap:13px;padding-left:17px;display:flex}.hero-proof strong{color:var(--cyan);font-size:11px}.hero-proof span{color:#aeb2c0;font-size:12px;line-height:1.5}.scroll-note{writing-mode:vertical-rl;letter-spacing:.22em;color:#bcc0cd;font-size:9px;position:absolute;bottom:56px;right:27px}.ticker{background:linear-gradient(90deg,var(--pink),#7b4ce8,var(--cyan));white-space:nowrap;align-items:center;height:50px;font-weight:800;display:flex;overflow:hidden}.ticker div{letter-spacing:.12em;word-spacing:16px;font-size:13px;animation:20s linear infinite slide}.ticker i{font-style:normal}@keyframes slide{to{transform:translate(-30%)}}.section{padding:120px 0}.intro-grid{grid-template-columns:1.2fr .8fr;align-items:end;gap:100px;display:grid}.section h2{margin:23px 0;font-size:clamp(43px,5.3vw,72px);line-height:1.04}.intro-copy p,.section-head>p:last-child,.contact-grid>div>p{color:#616573;font-size:17px;line-height:1.75}.intro-copy a,.contact-grid>div>a{border-bottom:1px solid #999;margin-top:25px;padding-bottom:8px;font-weight:700;display:inline-block}.metric-row{border-top:1px solid #c8c5bf;grid-template-columns:repeat(3,1fr);margin-top:90px;display:grid}.metric-row article{border-right:1px solid #c8c5bf;padding:30px 35px 0 0}.metric-row article+article{padding-left:35px}.metric-row b,.strategy-items b,.steps b{color:#9a9da5;font-size:11px}.metric-row strong{margin:28px 0 13px;font-size:20px;display:block}.metric-row p{color:#777b86;font-size:14px;line-height:1.65}.services,.process{background:var(--ink);color:#fff}.section-head{max-width:710px;margin-bottom:58px}.section-head>p:last-child{color:#999daa;max-width:600px}.service-list{border-top:1px solid #ffffff26}.service-list article{border-bottom:1px solid #ffffff26;grid-template-columns:60px 1fr 1.2fr 40px;align-items:center;gap:30px;padding:30px 4px;transition:all .25s;display:grid}.service-list article:hover{background:linear-gradient(90deg,#ee48c515,#0000);padding-left:14px}.service-list span{color:var(--cyan);font-size:11px}.service-list h3{font-size:22px}.service-list p{color:#9fa3b1;font-size:14px;line-height:1.6}.service-list i{color:var(--pink);font-size:22px;font-style:normal}.gallery{grid-template-columns:1.45fr .85fr;gap:20px;display:grid}.gallery figure{background:#111;margin:0;position:relative;overflow:hidden}.gallery img{object-fit:cover;width:100%;height:100%;transition:transform .7s}.gallery figure:hover img{transform:scale(1.035)}.gallery-main{height:620px}.gallery-side{align-self:end;height:490px}.gallery figcaption{color:#fff;background:linear-gradient(#0000,#060916e6);padding:70px 30px 28px;position:absolute;inset:auto 0 0}.gallery figcaption span{letter-spacing:.18em;color:var(--cyan);font-size:10px}.gallery figcaption strong{margin-top:8px;font-size:24px;display:block}.strategy{color:#fff;background:linear-gradient(135deg,#121528,#080b16)}.strategy-grid{grid-template-columns:1fr 1fr;gap:100px;display:grid}.strategy-items article{border-bottom:1px solid #ffffff24;grid-template-columns:45px 1fr;gap:20px;padding:25px 0;display:grid}.strategy-items h3{margin:0 0 10px;font-size:20px}.strategy-items p{color:#9da1ae;margin:0;line-height:1.65}.location-cloud{flex-wrap:wrap;gap:14px;display:flex}.location-cloud span{border:1px solid #bfc0c5;border-radius:100px;padding:18px 24px;font-weight:700}.location-cloud .accent{background:var(--ink);border-color:var(--ink);color:#fff}.steps{border-top:1px solid #ffffff2b;grid-template-columns:repeat(4,1fr);display:grid}.steps article{border-right:1px solid #ffffff2b;padding:32px 30px 15px 0}.steps article+article{padding-left:28px}.steps h3{margin:38px 0 12px;font-size:21px}.steps p{color:#9fa3b1;font-size:14px;line-height:1.6}.contact-grid{grid-template-columns:.9fr 1.1fr;gap:110px;display:grid}.contact form{background:#fff;padding:40px;box-shadow:0 20px 70px #17111c12}.contact label{letter-spacing:.08em;color:#686b75;margin-bottom:20px;font-size:11px;font-weight:700;display:block}.contact input,.contact textarea{width:100%;font:inherit;background:0 0;border:0;border-bottom:1px solid #c8c9cd;outline:none;padding:12px 0;display:block}.two{grid-template-columns:1fr 1fr;gap:28px;display:grid}.contact button{background:var(--ink);color:#fff;text-align:left;border:0;width:100%;padding:17px 22px;font-weight:700}.contact button span{float:right}.form-note{color:#70747f;font-size:12px}footer{color:#fff;background:#050711;padding:75px 0 25px}.footer-grid{grid-template-columns:1fr 1.2fr .7fr 1fr;gap:40px;display:grid}.footer-grid p{color:#8f93a1;margin:0;line-height:1.7}.footer-grid div{flex-direction:column;gap:12px;font-size:13px;display:flex}.footer-grid div span{letter-spacing:.2em;color:#777b88;font-size:9px}.footer-bottom{color:#777b88;border-top:1px solid #ffffff20;justify-content:space-between;margin-top:70px;padding-top:20px;font-size:11px;display:flex}@media (width<=800px){.wrap{width:min(100% - 32px,1180px)}.nav{height:68px}.brand img{width:145px}.menu-button{display:block}.menu-button span{background:#fff;width:23px;height:1px;margin:6px;display:block}.nav-links{background:#080b16;flex-direction:column;align-items:flex-start;padding:24px;display:none;position:absolute;top:68px;left:0;right:0}.nav-links.open{display:flex}.hero{min-height:760px}.hero-content{padding-top:150px}.hero h1{font-size:clamp(52px,16vw,76px)}.hero-copy{font-size:16px}.hero-proof{flex-wrap:wrap;gap:18px;margin-top:60px}.hero-proof div{min-width:42%}.scroll-note{display:none}.section{padding:80px 0}.intro-grid,.strategy-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.metric-row{grid-template-columns:1fr;margin-top:55px}.metric-row article,.metric-row article+article{border-bottom:1px solid #c8c5bf;border-right:0;padding:25px 0}.service-list article{grid-template-columns:35px 1fr 25px;gap:14px}.service-list article p{grid-column:2/4}.gallery{grid-template-columns:1fr}.gallery-main,.gallery-side{height:420px}.steps{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr;gap:0}.contact form{padding:26px}.footer-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-wrap:wrap;gap:18px}}@media (width<=480px){.hero-actions{flex-direction:column;align-items:flex-start}.hero h1{font-size:52px}.hero-proof div{min-width:100%}.section h2{font-size:40px}.gallery-main,.gallery-side{height:330px}.steps{grid-template-columns:1fr}.steps article{border-bottom:1px solid #ffffff2b;border-right:0;padding-left:0!important}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
+</style>
+<style>
+/* Standalone HTML image reliability and responsive sizing */
+.brand{display:flex;align-items:center;flex:0 0 auto}
+.brand img{display:block!important;width:190px!important;height:auto!important;max-height:64px!important;object-fit:contain!important}
+.hero-photo{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+.gallery figure{min-height:360px!important}
+.gallery figure img{display:block!important;width:100%!important;height:100%!important;min-height:360px!important;object-fit:cover!important;object-position:center!important}
+footer .footer-grid>img{display:block!important;width:190px!important;height:auto!important;object-fit:contain!important}
+@media(max-width:800px){
+  .brand img{width:148px!important;max-height:50px!important}
+  .hero-photo{object-position:62% center!important}
+  .gallery figure,.gallery figure img{min-height:320px!important;height:320px!important}
+  footer .footer-grid>img{width:160px!important}
+}
+@media(max-width:480px){
+  .brand img{width:132px!important;max-height:44px!important}
+  .hero-photo{object-position:66% center!important}
+  .gallery figure,.gallery figure img{min-height:260px!important;height:260px!important}
+}
+</style>
+<style id="mounting-figures-only">
+.mounting-section{background:#fff}.mounting-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.mounting-card{margin:0;background:#f5f6f7;border:1px solid #e1e3e6;overflow:hidden}.mounting-image{height:390px;padding:24px;display:flex;align-items:center;justify-content:center;background:#f0f2f3}.mounting-image img{width:100%;height:100%;object-fit:contain;object-position:center}.mounting-card figcaption{position:static;background:#080b16;color:#fff;padding:22px 24px;display:flex;gap:15px;align-items:center}.mounting-card figcaption span{color:var(--cyan);font-size:11px;letter-spacing:.12em}.mounting-card figcaption strong{font-size:18px;margin:0}.mounting-card:hover img{transform:none}
+@media(max-width:900px){.mounting-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mounting-image{height:350px}}
+@media(max-width:560px){.mounting-grid{grid-template-columns:1fr}.mounting-image{height:330px}}
+</style>
+<style id="back-to-top-styles">
+.back-to-top{position:fixed;right:24px;bottom:24px;z-index:80;display:flex;align-items:center;gap:10px;padding:13px 17px;border:1px solid #ffffff2e;background:#080b16e8;color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em;box-shadow:0 12px 35px #080b1640;backdrop-filter:blur(12px);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s,transform .25s,visibility .25s}.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{background:linear-gradient(90deg,var(--pink),#7854f6);border-color:transparent}.back-to-top .arrow{font-size:16px;line-height:1}@media(max-width:600px){.back-to-top{right:16px;bottom:16px;width:48px;height:48px;padding:0;justify-content:center;border-radius:50%}.back-to-top .label{display:none}.back-to-top .arrow{font-size:19px}}
+</style>
+<style id="startup-content-styles">
+.mobile-menu{display:none;position:relative}.mobile-menu summary{cursor:pointer;list-style:none;width:48px;height:48px;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:6px}.mobile-menu summary::-webkit-details-marker{display:none}.mobile-menu summary span{display:block;width:25px;height:2px;background:#fff}.mobile-menu[open] summary span:nth-child(1){transform:translateY(8px) rotate(45deg)}.mobile-menu[open] summary span:nth-child(2){opacity:0}.mobile-menu[open] summary span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}.mobile-menu-links{position:absolute;right:-16px;top:56px;width:min(290px,calc(100vw - 32px));padding:18px;background:#080b16;border:1px solid #ffffff24;box-shadow:0 18px 45px #0008;display:flex;flex-direction:column;gap:4px}.mobile-menu-links a{display:block;padding:14px 12px;color:#e8e9ee;font-size:15px}.mobile-menu-links .nav-cta{color:#080b16;text-align:center;margin-top:6px}
+.startup-note{margin-top:24px;padding:16px 18px;border-left:3px solid var(--cyan);background:#ffffff0d;color:#b8bdc9;font-size:13px;line-height:1.7}
+.audience-section{background:#fff}.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.audience-card{background:var(--paper);border:1px solid #d8d5cf;padding:38px}.audience-card h3{font-family:var(--font-display),sans-serif;font-size:30px;margin:12px 0 16px}.audience-card p{color:#686c78;line-height:1.75}.audience-card ul{margin:24px 0;padding:0;display:grid;gap:11px}.audience-card li{color:#555966;list-style:none}.audience-card li:before{content:'\2192';color:var(--pink);margin-right:10px}.audience-card .button{display:inline-block;margin-top:8px}.audience-card .button.dark{background:var(--ink);color:#fff;padding:15px 20px}.concept-note{color:#737783;max-width:850px;margin:22px 0 0;font-size:13px;line-height:1.7}.about-startup{background:linear-gradient(135deg,#121528,#080b16);color:#fff}.about-startup .intro-copy p{color:#aeb2c0}.about-startup .intro-copy p+p{margin-top:18px}.contact-choices{display:grid;grid-template-columns:1fr 1fr;gap:18px}.enquiry-card{background:#fff;padding:32px;box-shadow:0 20px 70px #17111c12}.enquiry-card h3{font-size:22px;margin:0 0 12px}.enquiry-card p{color:#70747f;line-height:1.65}.enquiry-button{display:block;margin-top:22px;background:var(--ink);color:#fff;padding:16px 18px;font-weight:700}.enquiry-button span{float:right}.availability-note{margin-top:24px;color:#777b86;font-size:12px;line-height:1.7}.nav-links a:focus-visible,.button:focus-visible,.enquiry-button:focus-visible,.back-to-top:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}@media(max-width:800px){.audience-grid,.contact-choices{grid-template-columns:1fr}.audience-card{padding:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}.gallery img,.back-to-top{transition:none}}
+</style>
+<style id="mobile-menu-fix">
+@media(max-width:800px){.nav-links{display:none!important}.mobile-menu{display:block}}
+</style>
+<style id="enquiry-cta-styles">
+.enquiry-card{min-height:330px;background:#fff;padding:48px;box-shadow:0 20px 70px #17111c12;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.enquiry-card p{color:#686b75;max-width:420px;margin:0 0 28px;font-size:16px;line-height:1.7}.enquiry-button{display:inline-flex;align-items:center;justify-content:space-between;gap:48px;min-width:230px;background:var(--ink);color:#fff;padding:18px 22px;font-weight:800}.enquiry-button:hover{background:linear-gradient(90deg,var(--pink),#7854f6)}.enquiry-button span{font-size:18px}@media(max-width:800px){.enquiry-card{min-height:230px;padding:32px}}@media(max-width:480px){.enquiry-card{padding:26px}.enquiry-button{width:100%;min-width:0}}
+</style>
+
+<style id="about-alignment-fix">
+.about-startup .intro-grid{align-items:center;}
+.about-startup .intro-copy{max-width:620px;}
+.about-startup .intro-copy p{
+  margin:0;
+  max-width:620px;
+  font-size:17px;
+  line-height:1.8;
+  text-align:left;
+}
+@media(max-width:800px){
+  .about-startup .intro-copy{max-width:none;}
+  .about-startup .intro-copy p{max-width:none;}
+}
+</style>
+
+<style id="desktop-ribbon-height-fix">
+/* Compact desktop ribbon; mobile navigation remains unchanged. */
+.hero h1{max-width:1100px;text-wrap:balance;}
+.hero h1 em{display:block;}
+.mounting-card figcaption{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:92px;padding:18px 20px;text-align:center;}
+.mounting-card figcaption span{display:block;line-height:1;font-size:10px;letter-spacing:.16em;}
+.mounting-card figcaption strong{display:block;width:100%;line-height:1.25;overflow-wrap:anywhere;font-size:20px;}
+.mounting-card figcaption small{display:block;width:100%;color:#d9dce5;font-size:13px;font-weight:600;line-height:1.35;overflow-wrap:anywhere;}
+.mounting-section .section-head{max-width:1050px;}
+.mounting-card{display:grid;grid-template-rows:1fr auto;}
+.strategy-grid{align-items:center;}
+.strategy-items article{grid-template-columns:1fr;}
+.location-cloud{justify-content:center;}
+.service-list article{grid-template-columns:60px 1fr 1.2fr;}
+@media (min-width:801px){
+  .nav{height:42px;}
+  .brand img{width:118px!important;max-height:30px!important;}
+  .nav-cta{padding:6px 13px;}
+  .hero-content{padding-top:132px;}
+  .hero-proof{max-width:620px;gap:0;}
+  .hero-proof>div{flex:1;min-width:0;padding-right:30px;}
+}
+@media (max-width:800px){
+  .hero-proof{display:grid;grid-template-columns:1fr;gap:22px;}
+  .hero-proof>div{display:grid;grid-template-columns:48px 1fr;align-items:start;gap:12px;min-width:0;}
+  .service-list article{grid-template-columns:35px 1fr;}
+  .service-list article p{grid-column:2/3;}
+  .locations .section-head{margin-bottom:44px;}
+  .locations .section-head h2{max-width:100%;text-wrap:balance;}
+  .locations .section-head>p:last-child{max-width:100%;font-size:16px;line-height:1.65;}
+  .location-cloud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;}
+  .location-cloud span{display:flex;align-items:center;justify-content:center;min-width:0;min-height:76px;padding:15px 12px;text-align:center;font-size:clamp(14px,3.7vw,18px);line-height:1.25;overflow-wrap:anywhere;}
+  .mounting-card figcaption{min-height:88px;padding:16px 18px;}
+  .mounting-card figcaption strong{font-size:22px;}
+  .mounting-card figcaption small{font-size:14px;}
+}
+@media (max-width:360px){
+  .location-cloud{grid-template-columns:1fr;}
+  .location-cloud span{min-height:64px;font-size:16px;}
+}
+</style>
+
+<style id="streetcast-logo-visibility-fix">
+/* Balanced logo sizing with a subtle highlight for clear visibility. */
+.nav{height:76px;}
+.brand img{
+  width:160px!important;
+  max-height:54px!important;
+  filter:brightness(1.06) drop-shadow(0 0 4px rgba(73,220,235,.12));
+}
+@media(max-width:800px){
+  .nav{height:66px;}
+  .brand img{width:132px!important;max-height:44px!important;}
+}
+@media(max-width:480px){
+  .brand img{width:122px!important;max-height:40px!important;}
+}
+</style>
+</head>
+<body class="__variable_manrope_01yf5d6 __variable_dm_sans_16jf2w7">
+<main>
+<header class="nav-shell">
+<nav class="nav wrap">
+<a href="#top" class="brand">
+<img src="assets/image-01.png" alt="StreetCast"/>
+</a>
+<div class="nav-links " id="primary-navigation">
+<a href="#services">Services</a>
+<a href="#work">Gallery</a>
+<a href="#about">About</a>
+<a href="#locations">Locations</a>
+<a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe2oJBMXL15fjS3CMAnlFR_RpjJ_HxWce9ukBA7e-teRxLodQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enquiry</a>
+</div>
+<details class="mobile-menu">
+<summary aria-label="Open navigation menu">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</summary>
+<div class="mobile-menu-links">
+<a href="#services">Services</a>
+<a href="#work">Gallery</a>
+<a href="#about">About</a>
+<a href="#locations">Locations</a>
+<a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe2oJBMXL15fjS3CMAnlFR_RpjJ_HxWce9ukBA7e-teRxLodQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enquiry</a>
+</div>
+</details>
+</nav>
+</header>
+<section class="hero" id="top">
+<img class="hero-photo" src="assets/image-02.png" alt="Immersive curved LED installation in a contemporary urban atrium"/>
+<div class="hero-shade">
+</div>
+<div class="hero-grid">
+</div>
+<div class="wrap hero-content">
+<p class="eyebrow">
+<span>
+</span> DIGITAL OUT-OF-HOME |DOOH|, DONE RIGHT</p>
+<h1>Your brand,<br/>
+<em>made more visible.</em>
+</h1>
+<p class="hero-copy">StreetCast is an emerging digital out-of-home company building a network of strategically placed LED displays that connect brands, audiences and high-visibility properties.</p>
+<div class="hero-proof">
+<div>
+<strong>01</strong>
+<span>Audience-first<br/>Plan around people</span>
+</div>
+<div>
+<strong>02</strong>
+<span>Creative to<br/>campaign live</span>
+</div>
+</div>
+</div>
+</section>
+<section class="ticker">
+<div>LED BILLBOARDS <i>✦</i> DIGITAL SIGNAGE <i>✦</i> TRANSIT MEDIA <i>✦</i> EVENT SCREENS <i>✦</i> LED BILLBOARDS <i>✦</i> DIGITAL SIGNAGE</div>
+</section>
+<section class="section intro" id="why">
+<div class="wrap intro-grid">
+<div>
+<p class="eyebrow dark">
+<span>
+</span> WHY OUT-OF-HOME</p>
+<h2>Unskippable attention.<br/>
+<em>Built into the city.</em>
+</h2>
+</div>
+<div class="intro-copy">
+<p>A billboard doesn’t get muted, scrolled past or skipped over. It earns repeated exposure in the places your audience already moves through every day.</p>
+<a href="#services">See how StreetCast works <span>→</span>
+</a>
+</div>
+</div>
+<div class="wrap metric-row">
+<article>
+<b>01</b>
+<strong>High-frequency visibility</strong>
+<p>Build familiarity with repeated exposure—without paying for every impression again.</p>
+</article>
+<article>
+<b>02</b>
+<strong>Location-led relevance</strong>
+<p>Reach people near the mall, campus, workplace or corridor that matters.</p>
+</article>
+<article>
+<b>03</b>
+<strong>Measurable response</strong>
+<p>Connect screens to QR scans, geo-targeted follow-up and real outcomes.</p>
+</article>
+</div>
+</section>
+<section class="section about-startup" id="about">
+<div class="wrap intro-grid">
+<div>
+<p class="eyebrow">
+<span>
+</span> ABOUT STREETCAST</p>
+<h2>Building the next<br/>
+<em>street-level network.</em>
+</h2>
+</div>
+<div class="intro-copy">
+<p>StreetCast is a modern Digital Out-of-Home (DOOH) solutions company helping brands stand out through strategic location planning, digital billboard displays, flexible campaigns, and creative solutions. We make it easier for businesses to reach audiences in high-impact locations and turn everyday journeys into meaningful brand experiences.</p>
+</div>
+</div>
+</section>
+<section class="section mounting-section" id="mounting">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow dark">
+<span>
+</span>MOUNTING CONFIGURATIONS</p>
+<h2>One platform.<br/>
+<em>Six ways to make it yours.</em>
+</h2>
+</div>
+<div class="mounting-grid">
+<figure class="mounting-card">
+<div class="mounting-image">
+<img src="assets/image-03.png" alt="Wall Mounted LED display mounting figure"/>
+</div>
+<figcaption>
+<span>01</span>
+<strong>Anchor Wall</strong>
+<small>A wall-mounted Signage</small>
+</figcaption>
+</figure>
+<figure class="mounting-card">
+<div class="mounting-image">
+<img src="assets/image-04.png" alt="Pole Mounted LED display mounting figure"/>
+</div>
+<figcaption>
+<span>02</span>
+<strong>Beacon</strong>
+<small>A Pole Mounted Signage</small>
+</figcaption>
+</figure>
+<figure class="mounting-card">
+<div class="mounting-image">
+<img src="assets/image-05.png" alt="Ceiling Hung LED display mounting figure"/>
+</div>
+<figcaption>
+<span>03</span>
+<strong>Canopy</strong>
+<small>A Ceiling Hung Signage</small>
+</figcaption>
+</figure>
+<figure class="mounting-card">
+<div class="mounting-image">
+<img src="assets/image-06.png" alt="Standee — Single Leg LED display mounting figure"/>
+</div>
+<figcaption>
+<span>04</span>
+<strong>Scout</strong>
+<small>A-Frame Standee</small>
+</figcaption>
+</figure>
+<figure class="mounting-card">
+<div class="mounting-image">
+<img src="assets/image-07.png" alt="Standee — Two Leg LED display mounting figure"/>
+</div>
+<figcaption>
+<span>05</span>
+<strong>Stance</strong>
+<small>Two Leg Standee</small>
+</figcaption>
+</figure>
+<figure class="mounting-card">
+<div class="mounting-image">
+<img src="assets/image-08.png" alt="Standee — Frame Style LED display mounting figure"/>
+</div>
+<figcaption>
+<span>06</span>
+<strong>Portal</strong>
+<small>A Frame Mount Signage</small>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="section services" id="services">
+<div class="wrap">
+<div class="section-head light">
+<p class="eyebrow">
+<span>
+</span> WHAT WE DO</p>
+<h2>Five ways onto<br/>
+<em>the street.</em>
+</h2>
+<p>Start with a practical campaign and scale with confidence—from creative support and media planning to location strategy and managed digital-out-of-home.</p>
+</div>
+<div class="service-list">
+<article>
+<span>01</span>
+<h3>Creative &amp; content</h3>
+<p>Design, animation and scheduling for screens you already own or use for campaigns.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Media Solution</h3>
+<p>We identify and compare suitable LED media opportunities based on audience, location and budget.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Indoor digital signage</h3>
+<p>LED screens for malls, clinics, gyms, offices and restaurants.</p>
+</article>
+<article>
+<span>04</span>
+<h3>Outdoor LED billboards</h3>
+<p>Large-format digital hoardings at signal junctions, shopping districts and business corridors.</p>
+</article>
+<article>
+<span>05</span>
+<h3>Compliance &amp; site strategy</h3>
+<p>Location analysis, site planning and scheduling—handled end to end.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section work" id="work">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow dark">
+<span>
+</span> REAL-WORLD MEDIA</p>
+<h2>Built to be seen.<br/>
+<em>Placed to perform.</em>
+</h2>
+</div>
+<div class="gallery">
+<figure class="gallery-main">
+<img src="assets/image-09.png" alt="Digital billboard mounted on a contemporary urban building"/>
+<figcaption>
+<span>OUTDOOR LED</span>
+<strong>High-street impact</strong>
+</figcaption>
+</figure>
+<figure class="gallery-side">
+<img src="assets/image-10.png" alt="Premium indoor digital displays in a modern public concourse"/>
+<figcaption>
+<span>INDOOR DIGITAL</span>
+<strong>High-dwell environments</strong>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="section strategy">
+<div class="wrap strategy-grid">
+<div>
+<p class="eyebrow">
+<span>
+</span> OUR APPROACH</p>
+<h2>We plan the audience<br/>
+<em>before the screen.</em>
+</h2>
+</div>
+<div class="strategy-items">
+<article>
+<div>
+<h3>Audience-fit locations</h3>
+<p>Our site selection is data-led. We evaluate dwell time, footfall, traffic patterns, and visibility to ensure your message is seen by the right people — not just placed in available space.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="locations section" id="locations">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow dark">
+<span>
+</span> WHERE WE PLACE</p>
+<h2>Your audience is already there.</h2>
+<p>Site shortlists are built around movement, visibility and commercial intent.</p>
+</div>
+<div class="location-cloud">
+<span class="">Signal junctions</span>
+<span>Business corridors</span>
+<span class="">Retail districts</span>
+<span class="">Transit hubs</span>
+<span>Campuses</span>
+<span class="">Premium indoor venues</span>
+</div>
+</div>
+</section>
+<section class="section audience-section" id="partner">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow dark">
+<span>
+</span> GROW WITH STREETCAST</p>
+<h2>Two ways to<br/>
+<em>work with us.</em>
+</h2>
+<p>We are building our network through strategic partnerships with brands, businesses, property owners, and commercial venues.</p>
+</div>
+<div class="audience-grid">
+<article class="audience-card">
+<p class="eyebrow dark">
+<span>
+</span> FOR BRANDS</p>
+<h3>Get Seen with StreetCast</h3>
+<p>Reach customers through digital displays planned around commercially relevant, high-visibility locations.</p>
+<ul>
+<li>Flexible campaign durations</li>
+<li>Location and audience-focused planning</li>
+<li>Creative and scheduling support</li>
+<li>Playback confirmation and practical reporting</li>
+</ul>
+<a class="button dark" href="https://docs.google.com/forms/d/e/1FAIpQLSe2oJBMXL15fjS3CMAnlFR_RpjJ_HxWce9ukBA7e-teRxLodQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">Share campaign requirements ↗</a>
+</article>
+<article class="audience-card">
+<p class="eyebrow dark">
+<span>
+</span> FOR PROPERTY OWNERS</p>
+<h3>Activate Your Space</h3>
+<p>Own or manage a visible commercial property? Explore the potential to host an LED Media display.</p>
+<ul>
+<li>Commercial buildings and shopping complexes</li>
+<li>Tech parks, offices and campuses</li>
+<li>Road-facing and high-footfall properties</li>
+<li>Evaluation of visibility and technical feasibility</li>
+</ul>
+<a class="button dark" href="https://docs.google.com/forms/d/e/1FAIpQLSep3i0TeaKWUCK8hjUl8vNP46PI1N0FMRtY8HCz5B_z3PV4Kg/viewform?usp=header">Submit property details ↗</a>
+</article>
+</div>
+
+</div>
+</section>
+<section class="contact section" id="contact">
+<div class="wrap">
+<div>
+<p class="eyebrow dark">
+<span>
+</span> START A CAMPAIGN</p>
+<h2>Tell us where you<br/>want to be <em>seen.</em>
+</h2>
+<p>Share a few details and we will review your campaign requirements.</p>
+<a href="mailto:info@streetcast.in">info@streetcast.in ↗</a>
+</div>
+<div class="contact-choices" style="margin-top:42px;grid-template-columns:1fr;">
+  <div class="enquiry-card" style="padding:8px 20px;">
+    <p class="no-wrap" style="margin-bottom:6px;font-size:14px;">Continue to our enquiry form to share your campaign requirements.</p>
+    <a class="enquiry-button" style="padding:8px 14px;font-size:14px;" href="https://docs.google.com/forms/d/e/1FAIpQLSe2oJBMXL15fjS3CMAnlFR_RpjJ_HxWce9ukBA7e-teRxLodQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enquiry <span>↗</span>
+  </a>
+  </div>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap footer-grid">
+<img src="assets/image-01.png" alt="StreetCast"/>
+<p>Digital LED media that<br/>puts brands in motion.</p>
+<div>
+<a href="#services">Services</a>
+<a href="#work">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+<div>
+<span>ENQUIRIES</span>
+<a href="mailto:info@streetcast.in">info@streetcast.in</a><a href="tel:+919019598265">+91 9019598265</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© 2026 StreetCast</span>
+<span>India · Digital out-of-home media</span>
+<a href="#top">Back to top ↑</a>
+</div>
+</footer>
+</main>
+<script>
+const menuButton=document.querySelector('.menu-button');
+const navLinks=document.querySelector('.nav-links');
+menuButton?.addEventListener('click',()=>{const isOpen=navLinks?.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(Boolean(isOpen)));});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{navLinks?.classList.remove('open');menuButton?.setAttribute('aria-expanded','false');}));
+</script>
+<a class="back-to-top" href="#top" aria-label="Back to top">
+<span class="label">Back to top</span>
+<span class="arrow" aria-hidden="true">↑</span>
+</a>
+<script id="back-to-top-script">
+const backToTop=document.querySelector('.back-to-top');
+const toggleBackToTop=()=>backToTop?.classList.toggle('show',window.scrollY>420);
+window.addEventListener('scroll',toggleBackToTop,{passive:true});
+toggleBackToTop();
+</script>
+</body>
+</html>
